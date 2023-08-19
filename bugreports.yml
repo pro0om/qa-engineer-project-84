@@ -6,101 +6,101 @@
 
 - summary: |
    При переходе на русский не переводятся категории и описание товара
-  environment: |
+environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать ссылку "Language"
     3. Выбрать "Russian"
     4. Нажать на "Категория"
-  expected-result: |
+expected-result: |
     Всплывает список выбора категории товара и его описание на русском 
-  actual-result: |
+actual-result: |
     Всплывает список выбора категории товара и его описание на английском  
 
-    - summary: |   
+- summary: |   
     Для сброса категории нужно перезагрузить страницу или перейти в "Корзина" и обратно в "Магазин"
-  environment: |
+environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать на "Категория"
     3. Выбрать одну из всплывающих категорий
     4. Выбрать категории "Все"
-  expected-result: |
+expected-result: |
     Выдает весь список товаров
-  actual-result: |
+actual-result: |
     Отсутствует кнопка "Все" 
     //Вроде не баг, но работать не удобно
 
-    - summary: |
+- summary: |
    В корзине если берешь несколько товаров, не понятно какая скидка(суммируется)
-  environment: |
+environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать 2 раза "В корзину"  iPhone 9 549$ (477.85$ - цена со скидкой)
     3. Перейти в "Корзина"
-  expected-result: |
+expected-result: |
     Видно товар/кол-во товара/цену/скидку/сумму 
-  actual-result: |
+actual-result: |
     Видно товар/кол-во товара/цену без скидки/ сумму сделанную по скидке (получается не понятно сколько стоит товар на самом деле)
     ![alt text](https://github.com/pro0om/qa-engineer-project-84/blob/main/Sum.png) 
     
-    - summary: |
+- summary: |
    Цена не может быть отрицательным числом
-  environment: |
+environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Ввести в раздел цены От 0 До -1
-  expected-result: |
+expected-result: |
     Должен не дать выести отрицательное число
-  actual-result: |
+actual-result: |
     Вводит отрицательное число
 
-    - summary: |
+- summary: |
     При нажатии кнопок "Предыдущея" или " Следующея" переключается список категорий, а не выбранного товара
-      environment: |
+environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Поставить галочки на выбранный товар
     3. Нажать "Следующая"
-  expected-result: |
+expected-result: |
     Должна появиться сл. страница выбранного товара
-  actual-result: |
+actual-result: |
     Выводится следующий список категорий товара
 
-     - summary: |
+- summary: |
     Если описание большое, текст выдалкивает все за границы 
-      environment: |
+environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. 2 раза нажать на "Следующий"
     3. Выйти на низ страницы
-  expected-result: |
+expected-result: |
     Должна должно быть красивое описание товара в их ячейках
-  actual-result: |
+actual-result: |
     Товар с большим описанием выходит за границы 
 
-     - summary: |
+- summary: |
     Если строка с ценой и количеством товара слишком большая то меняется размер кнопки " В корзину"
       environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Смотреть на товар Samsung Universe 9
-  expected-result: |
+expected-result: |
     Кнопки в описании должны быть одного размера
-  actual-result: |
+actual-result: |
     Кнопка меняет свой размер
     
