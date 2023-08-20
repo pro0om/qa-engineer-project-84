@@ -72,7 +72,7 @@
    status: fail
 
 - summary: |
-    Проверка кол-ва товара при покупке
+    Проверка границ окна товара
    status: fail
 
 - summary: |
