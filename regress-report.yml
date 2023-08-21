@@ -211,4 +211,17 @@ expected-result: |
 actual-result: |
       Выдает весь товар 
 
+- summary: |
+   Когда нажимаешь на кнопку "Магазин" перекидвает на главную страницу английской версии сайта
+environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+steps-to-reproduce: |
+    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    2. Выбери русскую версию сайта 
+    3. Нажми "Магазин"
+expected-result: |
+      Должен перекинуть на главную страницу магазина русской версии
+actual-result: |
+      Выходит на главную страницу английской версии
 
