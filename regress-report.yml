@@ -1,227 +1,225 @@
 ---
+test-cases:
 - summary: |
     Проверка возможности искать товары по ключевому слову
-status: pass
+  status: pass
 
 - summary: |
     Проверка возможности искать товары по категории.
-status: pass
+  status: pass
 
 - summary: |
     Проверка возможности фильтровать товары по производителю.
-status: pass
+  status: pass
 
 - summary: |
     Проверка возможности фильтровать товары по цене
-status: pass
+  status: pass
 
 - summary: |
     Проверка возможности просматривать дополнительную информацию товара
-status: pass
+  status: pass
 
 - summary: |
     Проверка возможности добавление товара в корзину
-status: pass
+  status: pass
 
 - summary: |
     Проверка возможности добавление нескольких товаров в корзину
-status: pass
+  status: pass
 
 - summary: |
     Проверка возможности просматривать корзину покупателя
-status: pass
+  status: pass
     
 - summary: |
     Проверка возможности удалять продукт из корзины покупателя
-status: pass
+  status: pass
 
 - summary: |
     Проверка оформления заказа
-status: pass
+  status: pass
     
 - summary: |
     Проверка отчистки корзины
-status: pass
+  status: pass
 
 - summary: |
     Проверка возврата на главную станицу
-status: pass
+  status: pass
 
 - summary: |
     Проверка логотипа для выхода на главную страницу
-status: pass
+  status: pass
  
 - summary: |
     Проверка перевода страницы с одного языка на другой
-status: fail
+  status: fail
 
 - summary: |
     Проверка сброса категории товаров
-status: pass
+  status: pass
     
 - summary: |
     Проверка цены со скидкой в корзине товаров
-status: fail
+  status: fail
     
 - summary: |
     Проверка доступных чисел в выборе границ цены товара
-status: fail
+  status: fail
     
 - summary: |
    Проверка работы кнопок "Предыдущая" или " Следующая" 
-status: pass
+  status: pass
 
 - summary: |
     Проверка границ окна товара
-status: pass
+  status: pass
 
 - summary: |
    Проверка оставшегося товара при добавлении его в корзину
-status: fail
+  status: fail
 
 - summary: |
    Проверка отчистки корзины при покупке товара
-status: fail
+  status: fail
 
 - summary: |
     Проверка товара в наличии
-status: fail
+  status: fail
 
----
 bugreports:
 - summary: |
    При переходе на русский не переводятся категории и описание товара
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать ссылку "Language"
     3. Выбрать "Russian"
     4. Нажать на "Категория"
-expected-result: |
+  expected-result: |
     Всплывает список выбора категории товара и его описание на русском 
-actual-result: |
+  actual-result: |
     Всплывает список выбора категории товара и его описание на английском
     Ошибка изображена на скриншоте Translate.png
 
 
 - summary: |
    В корзине если берешь несколько товаров, не понятно какая скидка(суммируется)
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать 2 раза "В корзину"  iPhone 9 549$ (477.85$ - цена со скидкой)
     3. Перейти в "Корзина"
-expected-result: |
+  expected-result: |
     Видно товар/кол-во товара/цену/скидку/сумму 
-actual-result: |
+  actual-result: |
     Видно товар/кол-во товара/цену без скидки/ сумму сделанную по скидке (получается не понятно сколько стоит товар на самом деле)
     Ошибка изображена на скриншоте Sum.png
     
-
-
 - summary: |
     Если строка с ценой и количеством товара слишком большая то меняется размер кнопки " В корзину"
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Смотреть на товар Samsung Universe 9
-expected-result: |
+  expected-result: |
     Кнопки в описании должны быть одного размера
-actual-result: |
+  actual-result: |
     Кнопка меняет свой размер
     Ошибка изображена на скриншоте Border.png
 
 - summary: |
    При нажатии на покупку "В корзину", количество оставшегося товара не меняется. 
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать ссылку "В корзину"
-expected-result: |
+  expected-result: |
     Кол-во товара становится на 1 меньше 
-actual-result: |
+  actual-result: |
     Кол-во товара остается столько же  
     
 - summary: |
    При оформлении заказа купленный товар не стирается с корзины покупок, нужно делать вручную
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать на кнопку товара " В корзину"
     3. Перейти в "Корзину"
     4. Нажать "Оформить заказ"
     5. Нажать в "Заказ успешно формлен" кнопку "Закрыть"
-expected-result: |
+  expected-result: |
       Список купленных товаров должен быть очищен
-actual-result: |
+  actual-result: |
       Список нужно удалять вручную
 
 - summary: |
    Кнопка "Крестик", для закрытия окна, не работает
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажать на кнопку товара " В корзину"
     3. Перейти в "Корзину"
     4. Нажать "Оформить заказ"
     5. Нажать в "Заказ успешно формлен" кнопку "Крестик"
-expected-result: |
+  expected-result: |
       Окно должно закрыться
-actual-result: |
+  actual-result: |
       Окно не закрывается
       Ошибка изображена на скриншоте Close.png
 
 - summary: |
    Кнопка "Следующая", для перехода на след. страницу товара пропадает
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Выбрать пустую категорию " "    
-expected-result: |
+  expected-result: |
       Должно вернуть весь список товара и дать возможность переключать страницы товара
-actual-result: |
+  actual-result: |
      Кнопка "Следующая" пропала
      Ошибка изображена на скриншоте before.png
      Ошибка изображена на скриншоте after.png
 
 - summary: |
    Когда убираешь галочку "В списке" не фильтрует товар
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Убрать галочку "В списке"    
-expected-result: |
+  expected-result: |
       Должен выдать весь товар которого нет на складе
-actual-result: |
+  actual-result: |
       Выдает весь товар 
 
 - summary: |
    Когда нажимаешь на кнопку "Магазин" перекидвает на главную страницу английской версии сайта
-environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
-steps-to-reproduce: |
+  steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Выбери русскую версию сайта 
     3. Нажми "Магазин"
-expected-result: |
+  expected-result: |
       Должен перекинуть на главную страницу магазина русской версии
-actual-result: |
+  actual-result: |
       Выходит на главную страницу английской версии
 
