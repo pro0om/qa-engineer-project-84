@@ -1,7 +1,7 @@
 ---
 - summary: |
     Проверка возможности искать товары по ключевому слову
- status: pass
+  status: pass
 
 - summary: |
     Проверка возможности искать товары по категории.
@@ -17,7 +17,7 @@
 
 - summary: |
     Проверка возможности просматривать дополнительную информацию товара
- status: pass
+  status: pass
 
 - summary: |
     Проверка возможности добавление товара в корзину
@@ -33,7 +33,7 @@
     
 - summary: |
     Проверка возможности удалять продукт из корзины покупателя
- status: pass
+  status: pass
 
 - summary: |
     Проверка оформления заказа
@@ -57,33 +57,33 @@
   
 - summary: |
     Проверка сброса категории товаров
-   status: fail
+  status: fail
     
 - summary: |
     Проверка цены в корзине товаров
-   status: fail
+  status: fail
     
 - summary: |
      Проверка доступных чисел в выборе границ цены товара
-   status: fail
+  status: fail
     
 - summary: |
     Проверка работы кнопок "Предыдущая" или " Следующая" 
-   status: fail
+  status: fail
 
 - summary: |
     Проверка границ окна товара
-   status: fail
+  status: fail
 
 - summary: |
    Проверка оставшегося товара при добавлении его в корзину
-   status: fail
+  status: fail
 
 - summary: |
    Проверка отчистки корзины при покупке товара
-   status: fail
+  status: fail
    
 - summary: |
     Проверка товара в наличии
-   status: pass
+  status: pass
 
