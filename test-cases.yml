@@ -361,13 +361,14 @@
   requirement: |
     При открытии на разных браузерах, страниц должна корректно отображаться 
   prerequisites:
-    Должны быть установлены браузеры: Google Chrome, Microsoft Edge, Mozila Firefox
+    Должны быть установлены браузеры Google Chrome, Microsoft Edge, Mozila Firefox, Safari
   test-data: |
     https://hexlet-products-store.vercel.app/
   steps:
     - Вводим адрес в Google Chrome
     - Вводим адрес в Microsoft Edge
     - Вводим адрес в Mozila Firefox
+    - Вводим адрес в Safari
   expected-result: |
     Должна открыться страница во всех браузерах
 
