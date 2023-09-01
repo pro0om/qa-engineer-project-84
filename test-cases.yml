@@ -393,7 +393,7 @@
   prerequisites: >
     Открыта страница https://hexlet-products-store.vercel.app/
   test-data: |
-    Споск для выборая языка сайта в правом верхнем углу
+    Списоск для выборая языка сайта в правом верхнем углу
   steps:
     - Нажимаем на "Язык"
   expected-result: |
