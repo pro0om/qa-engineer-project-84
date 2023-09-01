@@ -37,7 +37,7 @@
 
 - summary: |
     Проверка оформления заказа
-  status: pass
+  status: fail
     
 - summary: |
     Проверка отчистки корзины
