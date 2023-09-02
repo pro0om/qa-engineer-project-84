@@ -54,7 +54,7 @@
     OS Windows 10 
   steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Ввести в раздел цены От 0 До -1
+    2. Ввести в раздел цены От 0 До (-10)
   expected-result: |
     Должен не дать вывести отрицательное число
   actual-result: |
@@ -149,4 +149,102 @@
   actual-result: |
     Окно не закрывается
     Ошибка изображена на скриншоте Close.png
+
+- summary: |
+    Проверка оформления заказа
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: |
+    1. Открываем DevTools
+    2. Нажимаем на продукте "iPhone 9" кнопку "В корзину"
+    3. Нажимаем на кнопку "Корзина"
+    4. Нажимаем на кнопку "Оформить заказ"
+  expected-result: |
+    Запрос должен уйти и ответ должен прийти без ошибок
+  actual-result: |
+    Выходит ошибка - 500
+    Ошибка изображена на скриншоте Close.png  
+
+- summary: |
+    Проверка логотипа для выхода на главную страницу
+ environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: |
+    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    2. Нажимаем на кнопку "Корзина"
+    3. Нажимаем на логотип в левом верхнем углу
+  expected-result: |
+    Должна откртыться главная страница сайта
+  actual-result: |
+    Кнопка на логотипе отсутствует 
+    
+- summary: |
+    Проверка работы кнопки "Следующая" 
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: |
+    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    2. Выбираем категорию "laptops"
+    3. Нажимаем кнопку "Следующая" 
+  expected-result: |
+    Должен выдать следующу страницу с таким товаром или оставить на этой, если такого товара больше нет
+  actual-result: |
+    Переходит на следующии категории 
+
+- summary: |
+    Проверка работы кнопки "Предыдущая" 
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: |
+    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    2. Нажимаем кнопку "Следующая"  три раза
+    3. Нажимаем кнопку "Предыдущая" три раза
+  expected-result: |
+    Должен вернуться на главную страницу
+  actual-result: |
+    Не доходит до главной страницы
+    
+- summary: |
+    Проверка на кроссбраузерность
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: |
+    1. Открыть браузер Safari
+    2. Зайти на страницу https://hexlet-products-store.vercel.app/
+  expected-result: |
+    Должена открыться страница сайта
+  actual-result: |
+    Сайт не загружается
+  
+- summary: |
+    Проверка интернет магазина на корректную верстку на мобильном устройстве
+   environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: |
+    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    2. Открыть DevTools на проверку моб устройств
+  expected-result: |
+    Должно быть корректное отображение сайта
+  actual-result: |
+    Границы не соблюдены
+  
+- summary: |
+    Проверка логотипа "Флага" при выборе языка
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: |
+    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    2. Нажимаем на "Язык"
+  expected-result: |
+    Должен появиться список языков с их флагами
+  actual-result: |
+    Лого "Флаг станы" не отображается
+  
     
