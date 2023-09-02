@@ -90,7 +90,7 @@ test-cases:
    
 - summary: |
     Проверка товара в наличии
-  status: pass
+  status: fail
 
 - summary: |
     Проверка закрытия заказа на кнопку "Х"
@@ -183,4 +183,18 @@ bugreports:
     Должен выдать все варианты товаров попавшии в диапазон этой цены
   actual-result: >
     Выдает товар с любой ценой
+
+- summary: |
+    Мобильная версия сайта не работает
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: >
+    1. Открываем страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Включаем DevTool 
+    3. Выбираем мобильную версию
+  expected-result: |
+    Должен выдать сайт мобильной версии без ошибок
+  actual-result: >
+    Начиная с 766px не отображается левая часть сайта. Не видно Поиска, Категории, Бренда и тд
 
