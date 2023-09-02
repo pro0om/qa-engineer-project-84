@@ -11,7 +11,7 @@ test-cases:
 - summary: |
     Проверка возможности фильтровать товары по производителю.
   status: pass
-
+  
 - summary: |
     Проверка возможности фильтровать товары по цене
   status: pass
@@ -47,29 +47,33 @@ test-cases:
 - summary: |
     Проверка возврата на главную станицу
   status: pass
-
+  
 - summary: |
     Проверка логотипа для выхода на главную страницу
   status: pass
- 
+
 - summary: |
     Проверка перевода страницы с одного языка на другой
   status: fail
-
+  
 - summary: |
     Проверка сброса категории товаров
+  status: fail
+    
+- summary: |
+    Проверка цены в корзине товаров
+  status: fail
+    
+- summary: |
+     Проверка фильтрации цены "От и До"
   status: pass
     
 - summary: |
-    Проверка цены со скидкой в корзине товаров
-  status: fail
-    
+    Проверка работы кнопок "Следующая" 
+  status: pass
+
 - summary: |
-    Проверка доступных чисел в выборе границ цены товара
-  status: fail
-    
-- summary: |
-   Проверка работы кнопок "Предыдущая" или " Следующая" 
+    Проверка работы кнопок "Предыдущая"
   status: pass
 
 - summary: |
@@ -83,51 +87,100 @@ test-cases:
 - summary: |
    Проверка отчистки корзины при покупке товара
   status: fail
-
+   
 - summary: |
     Проверка товара в наличии
+  status: pass
+
+- summary: |
+    Проверка закрытия заказа на кнопку "Х"
   status: fail
 
+- summary: |
+    Проверка закрытия заказа на кнопку "Закрыть"
+  status: pass
+    
+- summary: |
+    Проверка на кроссбраузерность c Safari
+  status: fail
+
+- summary: |
+    Мобильная версия сайта
+  status: fail
+
+- summary: |
+    Проверка логотипа "Флага" при выборе языка
+  status: pass
+  
 bugreports:
 - summary: |
-   Кнопка "Следующая", для перехода на след. страницу товара пропадает
+    Кнопка "Следующая", для перехода на след. страницу товара пропадает
   environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     2. Выбрать пустую категорию " "    
   expected-result: |
-      Должно вернуть весь список товара и дать возможность переключать страницы товара
+    Должно вернуть весь список товара и дать возможность переключать страницы товара
   actual-result: |
-     Кнопка "Следующая" пропала
-     Ошибка изображена на скриншоте before.png
-     Ошибка изображена на скриншоте after.png
+    Кнопка "Следующая" пропала
+    Ошибка изображена на скриншоте before.png
+    Ошибка изображена на скриншоте after.png
 
 - summary: |
-   Когда убираешь галочку "В списке" не фильтрует товар
+    Когда убираешь галочку "В списке" не фильтрует товар
   environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     2. Убрать галочку "В списке"    
   expected-result: |
-      Должен выдать весь товар которого нет на складе
+    Должен выдать весь товар которого нет на складе
   actual-result: |
-      Выдает весь товар 
+    Выдает весь товар при этом выбор категории, поиск, выбор бренд не работает
 
 - summary: |
-   Когда нажимаешь на кнопку "Магазин" перекидвает на главную страницу английской версии сайта
+    Когда нажимаешь на кнопку "Магазин" перекидвает на главную страницу английской версии сайта
   environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     2. Выбери русскую версию сайта 
     3. Нажми "Магазин"
   expected-result: |
-      Должен перекинуть на главную страницу магазина русской версии
+    Должен перекинуть на главную страницу магазина русской версии
   actual-result: |
-      Выходит на главную страницу английской версии
+    Выходит на главную страницу английской версии
+      
+- summary: |
+    Фильтр товаров не корректный
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: >
+    1. Открываем страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Выбери категорию "laptops"
+    3. Выбери бренд "Huawei"
+  expected-result: |
+    Должен выдать все варианты лаптопов бренда "Huawei"
+  actual-result: >
+    Выведено много разного товара, разного бренда и разной категории
+
+- summary: |
+    Поиск по цене не работает
+  environment: |
+    Firefox Browser 115.1.0esr (64-разрядный)
+    OS Windows 10 
+  steps-to-reproduce: >
+    1. Открываем страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Выбери категорию " "
+    3. Вводим цену От = 0
+    4. Вводим цену До = 500
+  expected-result: |
+    Должен выдать все варианты товаров попавшии в диапазон этой цены
+  actual-result: >
+    Выдает товар с любой ценой
 
