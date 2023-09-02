@@ -168,7 +168,7 @@
 
 - summary: |
     Проверка логотипа для выхода на главную страницу
- environment: |
+  environment: |
     Firefox Browser 115.1.0esr (64-разрядный)
     OS Windows 10 
   steps-to-reproduce: |
